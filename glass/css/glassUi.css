@@ -1,0 +1,90 @@
+.glassHolder {
+    width: 320px;
+    height: 400px;
+    border-radius: 35px;
+    background-color: #fff2;
+    box-shadow: inset 2px 2px 1px #fff,
+        inset -2px -2px 0px #fff3,
+        5px 20px 50px #0002,
+        -5px -10px 25px #00000001;
+
+    
+    transform-style: preserve-3d;
+    transition: all .25s;
+    /* backdrop-filter: blur(10px); */
+}
+.glassHolder *{
+    pointer-events: none;
+}
+
+.glassBg {
+    transform-style: preserve-3d;
+    /* perspective: 1000px; */
+
+}
+
+.glassBg .floatOnGlass {
+    position: absolute;
+    transform: translateZ(40px);
+}
+
+.glassBg .glassFloat {
+
+    padding: 20px;
+    border-radius: 15px;
+    backdrop-filter: blur(4px);
+
+    background-color: #fff0;
+    box-shadow: inset 1px 1px 0px #fff,
+        inset -1px -1px 0px #fff3,
+        5px 10px 30px #0002,
+        -5px -10px 25px #00000001;
+}
+
+
+.glassBg .photo {
+    right: 15%;
+    top: -55px;
+    width: 140px;
+    height: 140px;
+
+
+    aspect-ratio: 1/1;
+
+    && img {
+        width: 100%;
+        aspect-ratio: 1/1;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+}
+
+.glassBg .photo.p2 {
+    left: -30px;
+    top: 50px;
+    width: 100px;
+    height: 100px;
+}
+.glassBg .photo.p1{
+    transform: translateZ(80px);
+}
+
+.glassBg .descText {
+    top: 192px;
+    left: 17%;
+    padding: 40px;
+    width: 303px;
+    text-align: center;
+    line-height: 1.6em;
+    transform: translateZ(120px);
+}
+
+.glassBg .introTxt {
+    FONT-SIZE: 2EM;
+    FONT-WEIGHT: BOLD;
+    COLOR: #ff0082;
+    top: 122px;
+    left: 88px;
+    width: 266px;
+    transform: translateZ(100px);
+}

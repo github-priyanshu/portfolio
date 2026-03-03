@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ai Downloads: Download here video from Youtube, Facebook & Instagram</title>
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/glassUi.css">
+  <script src="js/script.js"></script>
+</head>
+
+<body>
+  <div id="main" class="flex w100p">
+    <div id="work" class="flex">
+
+      <div class="glassHolder" id="myIntroPan">
+        <div class="glassBg">
+          <div class="floatOnGlass glassFloat photo p1">
+            <img src="img/profile.jpg" alt="Profile" title="Profile">
+          </div>
+          <div class="floatOnGlass glassFloat photo p2">
+
+          </div>
+          <div class="floatOnGlass introTxt">
+            me Developer
+          </div>
+          <div class="floatOnGlass glassFloat descText">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi magnam officiis sapiente odit at,
+            debitis sed. Totam placeat dolore ut quisquam officia nostrum debitis blanditiis
+          </div>
+        </div>
+
+      </div>
+
+
+    </div>
+    <div id="nav">
+
+    </div>
+  </div>
+
+
+  <script>
+    resetFormat();
+    document.querySelectorAll("*[id]").forEach(val => {
+      var id = val.getAttribute("id");
+      window[id] = val;
+    })
+
+    var glassHolder = opp(".glassHolder");
+    glassHolder.forEach(val => {
+      val.addEventListener("mousemove", (e) => {
+        // log(e)
+        
+      var x = e.offsetX;
+      var y = e.offsetY;
+        moveVal(val, x, y);
+      })
+
+      val.addEventListener("mouseout", () => {
+        val.style.transition = "all .5s";
+        val.style.transform = `perspective(1500px) rotateX(0deg) rotateY(0deg)`;
+      })
+
+      val.addEventListener("mouseenter", () => {
+        val.style.transition = "all .15s";
+        // val.style.transform=`perspective(1500px) rotateX(0deg) rotateY(0deg)`;
+
+        setTimeout(() => { val.style.transition = "none"; }, 150)
+      })
+    })
+
+
+
+
+    try {
+
+
+      let gyroscope = new Gyroscope({ frequency: 60 }); // Set reading frequency
+
+      gyroscope.addEventListener("reading", (e) => {
+
+        moveVal(glassHolder[0], gyroscope.y, gyroscope.x);
+
+      });
+
+      gyroscope.start();
+    }
+    catch (e) {
+      // document.body.innerText = e;
+    }
+
+    function moveVal(val, x, y) {
+      x = (160 - x) / 160 * 20;
+      y = (200 - y) / 200 * 20;
+
+      val.style.transform = `perspective(1500px) rotateX(${-y}deg) rotateY(${x}deg)`;
+    }
+
+  </script>
+</body>
+
+</html>
