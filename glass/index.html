@@ -53,9 +53,9 @@
     glassHolder.forEach(val => {
       val.addEventListener("mousemove", (e) => {
         // log(e)
-        
-      var x = e.offsetX;
-      var y = e.offsetY;
+
+        var x = e.offsetX;
+        var y = e.offsetY;
         moveVal(val, x, y);
       })
 
@@ -81,7 +81,11 @@
       let gyroscope = new Gyroscope({ frequency: 60 }); // Set reading frequency
 
       gyroscope.addEventListener("reading", (e) => {
+        
+        var x = gyroscope.y;
+        var y = gyroscope.x;
 
+      
         moveVal(glassHolder[0], gyroscope.y, gyroscope.x);
 
       });
@@ -93,9 +97,6 @@
     }
 
     function moveVal(val, x, y) {
-      x = (160 - x) / 160 * 20;
-      y = (200 - y) / 200 * 20;
-
       val.style.transform = `perspective(1500px) rotateX(${-y}deg) rotateY(${x}deg)`;
     }
 
