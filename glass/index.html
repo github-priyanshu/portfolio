@@ -37,8 +37,8 @@
 
     </div>
     <div id="nav">
-      <input type="range" id="pid" min="1" max="100">
-      <input type="range" id="offset" min="1" max="100">
+      <!-- <input type="range" id="pid" min="1" max="100">
+      <input type="range" id="offset" min="1" max="100"> -->
     </div>
   </div>
 
@@ -87,8 +87,8 @@
 
       gyroscope.addEventListener("reading", (e) => {
         
-        var x = gyroscope.y*pid.value*(Math.exp(-Math.abs(gyroscope.y)) + (offset.value-1));
-        var y = gyroscope.x*pid.value*(Math.exp(-Math.abs(gyroscope.x)) + (offset.value-1));
+        var x = gyroscope.y*20;
+        var y = gyroscope.x*20;
       
         moveVal(glassHolder[0], x, y);
 
