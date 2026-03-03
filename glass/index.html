@@ -85,8 +85,8 @@
 
       gyroscope.addEventListener("reading", (e) => {
         
-        var x = gyroscope.y*pid.value*Math.exp(-Math.abs(gyroscope.y));
-        var y = gyroscope.x*pid.value*Math.exp(-Math.abs(gyroscope.x));
+        var x = gyroscope.y*pid.value*(Math.exp(-Math.abs(gyroscope.y)) + 40);
+        var y = gyroscope.x*pid.value*(Math.exp(-Math.abs(gyroscope.x)) + 40);
       
         moveVal(glassHolder[0], x, y);
 
