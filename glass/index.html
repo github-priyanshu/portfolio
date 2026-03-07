@@ -7,6 +7,7 @@
   <title>Ai Downloads: Download here video from Youtube, Facebook & Instagram</title>
 
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/intro.css">
   <link rel="stylesheet" href="css/glassUi.css">
   <script src="js/script.js"></script>
 </head>
@@ -15,21 +16,67 @@
   <div id="main" class="flex w100p">
     <div id="work" class="flex">
 
-      <div class="glassHolder" id="myIntroPan">
-        <div class="glassBg">
-          <div class="floatOnGlass glassFloat photo p1">
-            <img src="img/profile.jpg" alt="Profile" title="Profile">
-          </div>
-          <div class="floatOnGlass glassFloat photo p2">
+      <div class="slide" id="s1">
+        <div class="glassHolder" id="myIntroPan">
+          <div class="glassBg">
+            <div class="floatOnGlass glassFloat photo p1">
+              <img src="img/profile.jpg" alt="Profile" title="Profile">
+            </div>
+            <div class="floatOnGlass glassFloat photo p2" id="skillBox">
+              <img src="img/svg/css.svg" alt="css icon">
+              <img src="img/svg/cad.svg" alt="cad icon">
+              <img src="img/svg/cpp.svg" alt="cpp icon">
+              <img src="img/svg/extension.svg" alt="extension.svg icon">
+              <img src="img/svg/html.svg" alt="html icon">
+              <img src="img/svg/mysql.svg" alt="mysql icon">
+              <img src="img/svg/php.svg" alt="php icon">
+              <img src="img/svg/nodejs.svg" alt="nodejs icon">
+            </div>
 
+            <div class="floatOnGlass introTxt" id="textIntoBox">
+              <span><strong>Full-Stack</strong> <b>Developer</b></span>
+              <span><b>Automation</b> <strong>Engineer</strong></span>
+              <span><strong>Digital</strong> <b>Architect</b></span>
+            </div>
+            <div class="floatOnGlass glassFloat descText flex c">
+              <div class="tabs flex">
+                <p><span fs=".8em">Experience</span> <strong>6 Years+</strong></p>
+                <div class="lineMargin" w="2px" h="20px" bg="#333" m="5px" style="border-radius: 9px;"></div>
+                <p><span fs=".8em"></span> <strong>IIT Jammu (CS)</strong></p>
+              </div>
+
+              <div class="lineMargin" m="10px"></div>
+
+              <p class="introPara">
+                Full-stack engineer & automation specialist. I build <span >complete platforms</span> for your company, <span >custom bots</span>
+                for your tasks. I also have worked upon <span >J&K Government</span> Kirayedar Portal.
+              </p>
+            </div>
           </div>
-          <div class="floatOnGlass introTxt">
-            me Developer
-          </div>
-          <div class="floatOnGlass glassFloat descText">
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Excepturi magnam officiis sapiente odit at,
-            debitis sed. Totam placeat dolore ut quisquam officia nostrum debitis blanditiis
-          </div>
+
+        </div>
+
+        <div class="socialPan flex">
+          <a href="https://linked.in.com" target="_blank">
+            <div class="iconPan flex">
+              <img src="https://www.svgrepo.com/show/512419/linkedin-161.svg" alt="">
+            </div>
+          </a>
+          <a href="https://www.youtube.com/@AwesomeCode" target="_blank">
+            <div class="iconPan flex">
+              <img src="https://www.svgrepo.com/show/513089/youtube-168.svg" alt="">
+            </div>
+          </a>
+          <a href="https://www.instagram.com/web_dev.priyanshu/" target="_blank">
+            <div class="iconPan flex">
+              <img src="https://www.svgrepo.com/show/521711/instagram.svg" alt="">
+            </div>
+          </a>
+          <a href="https://wa.me/918578069916" target="_blank">
+            <div class="iconPan flex">
+              <img src="https://www.svgrepo.com/show/431393/whatsapp.svg" alt="">
+            </div>
+          </a>
         </div>
 
       </div>
@@ -44,8 +91,8 @@
 
 
   <script>
-    var offset=op("#offset");
-    var pid=op("#pid");
+    var offset = op("#offset");
+    var pid = op("#pid");
     resetFormat();
     document.querySelectorAll("*[id]").forEach(val => {
       var id = val.getAttribute("id");
@@ -59,9 +106,9 @@
 
         var x = e.offsetX;
         var y = e.offsetY;
-        x=(x-160)/160*20;
-        y=(y-200)/200*20;
-        moveVal(val, x, y);
+        x = (x - 160) / 160 * 20;
+        y = (y - 200) / 200 * 20;
+        moveVal(val, -x, -y);
       })
 
       val.addEventListener("mouseout", () => {
@@ -86,10 +133,10 @@
       let gyroscope = new Gyroscope({ frequency: 60 }); // Set reading frequency
 
       gyroscope.addEventListener("reading", (e) => {
-        
-        var x = gyroscope.y*20;
-        var y = gyroscope.x*20;
-      
+
+        var x = gyroscope.y * 20;
+        var y = gyroscope.x * 20;
+
         moveVal(glassHolder[0], -x, -y);
 
       });
@@ -106,5 +153,7 @@
 
   </script>
 </body>
+<script src="js/skillSwipeElement.js"></script>
+
 
 </html>
