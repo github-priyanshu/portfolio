@@ -33,7 +33,7 @@ body {
   --darkText3: #333;
   --darkText5: #555;
   min-height: 100vh;
-  background: url("../img/bg.jpg") center;
+  background: url("../img/bg.jpg") center no-repeat;
   background-size: cover;
   font-family: sans-serif;
   width: 100%;
@@ -105,11 +105,11 @@ html {
   }
 
   #main #work {
-    height: 80%;
+    height: 85%;
   }
 
   #main #nav {
-    height: 20%;
+    height: 15%;
   }
 }
 

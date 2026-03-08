@@ -25,7 +25,7 @@ function textIntoSwipeInit(elem){
 
     textIntoSpans[textIntoNo].classList.add('active');
     textIntoNo++;
-    log(textIntoNo)
+    
     textIntoNo%=textIntoSpans.length;
 }
 textIntoSwipeInit();

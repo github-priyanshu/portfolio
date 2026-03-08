@@ -5,6 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Priyanshu Kumar : A Software Engineer</title>
+
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/intro.css">
   <link rel="stylesheet" href="css/glassUi.css">
@@ -47,8 +48,9 @@
               <div class="lineMargin" m="10px"></div>
 
               <p class="introPara">
-                Full-stack engineer & automation specialist. I build <span >complete platforms</span> for your company, <span >custom bots</span>
-                for your tasks. I also have worked upon <span >J&K Government</span> Kirayedar Portal.
+                Full-stack engineer & automation specialist. I build <span>complete platforms</span> for your company,
+                <span>custom bots</span>
+                for your tasks. I also have worked upon <span>J&K Government</span> Kirayedar Portal.
               </p>
             </div>
           </div>
@@ -56,7 +58,7 @@
         </div>
 
         <div class="socialPan flex">
-          <a href="https://linked.in.com" target="_blank">
+          <a href="https://www.linkedin.com/in/priyanshu-kumar-439297218" target="_blank">
             <div class="iconPan flex">
               <img src="https://www.svgrepo.com/show/512419/linkedin-161.svg" alt="">
             </div>
@@ -90,70 +92,13 @@
 
 
   <script>
-    var offset = op("#offset");
-    var pid = op("#pid");
-    resetFormat();
-    document.querySelectorAll("*[id]").forEach(val => {
-      var id = val.getAttribute("id");
-      window[id] = val;
-    })
-
-    var glassHolder = opp(".glassHolder");
-    glassHolder.forEach(val => {
-      val.addEventListener("mousemove", (e) => {
-        // log(e)
-
-        var x = e.offsetX;
-        var y = e.offsetY;
-        x = (x - 160) / 160 * 20;
-        y = (y - 200) / 200 * 20;
-        moveVal(val, -x, -y);
-      })
-
-      val.addEventListener("mouseout", () => {
-        val.style.transition = "all .5s";
-        val.style.transform = `perspective(1500px) rotateX(0deg) rotateY(0deg)`;
-      })
-
-      val.addEventListener("mouseenter", () => {
-        val.style.transition = "all .15s";
-        // val.style.transform=`perspective(1500px) rotateX(0deg) rotateY(0deg)`;
-
-        setTimeout(() => { val.style.transition = "none"; }, 150)
-      })
-    })
 
 
-
-
-    try {
-
-
-      let gyroscope = new Gyroscope({ frequency: 60 }); // Set reading frequency
-
-      gyroscope.addEventListener("reading", (e) => {
-
-        var x = gyroscope.y * 20;
-        var y = gyroscope.x * 20;
-
-        moveVal(glassHolder[0], -x, -y);
-
-      });
-
-      gyroscope.start();
-    }
-    catch (e) {
-      // document.body.innerText = e;
-    }
-
-    function moveVal(val, x, y) {
-      val.style.transform = `perspective(1500px) rotateX(${-y}deg) rotateY(${x}deg)`;
-    }
 
   </script>
 </body>
+<script src="js/fun.js"></script>
 <script src="js/skillSwipeElement.js"></script>
-
 
 
 </html>
