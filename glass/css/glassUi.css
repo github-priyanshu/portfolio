@@ -89,7 +89,8 @@
     padding: 30px;
     width: 303px;
     text-align: center;
-    line-height: 1.6em;
+    line-height: 1.4em;
+    font-style: 0.8em;
     transform: translateZ(120px);
 }
 
@@ -106,7 +107,7 @@
     COLOR: #ff0082;
     top: 122px;
     left: 88px;
-    width: 356px;
+    width: 380px;
     transform: translateZ(100px);
 }
 
@@ -126,11 +127,11 @@
 }
 
 .glassBg .introTxt span b {
-    transform: perspective(200px) translateY(30px) rotateX(-45deg);
+    transform: perspective(200px) translateY(30px) rotateX(-90deg);
 }
 
 .glassBg .introTxt span strong {
-    transform: perspective(200px) translateY(-30px) rotateX(45deg);
+    transform: perspective(200px) translateY(-30px) rotateX(90deg);
     color: #fff;
     background-color: #000;
     padding: 5px 10px;
@@ -142,6 +143,41 @@
     transition: all .5s;
     transform: perspective(200px) translateY(0px) rotateX(0deg);
     opacity: 1;
+}
+
+/* nav */
+a {
+    color: 000;
+    text-decoration: none;
+}
+
+.menuItem img {
+    width: 50px;
+    height: 50px;
+}
+
+.navBox {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: max-content;
+}
+
+.navBox .menuItem {
+    margin: 10px 20px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+.navBox .img {
+    margin-right: 20px;
+    opacity: .8;
+}
+
+.navBox .txt {
+    font-size: 2em;
+    /* font-family: Shizuru; */
+    color: rgb(0, 0, 0, .7);
 }
 
 
@@ -158,9 +194,59 @@
     }
 
     .glassBg .introTxt {
-        left: 24px;
+        left: 13px;
         font-size: 1.8em;
-        width: 320px;
+        width: 345px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .nav{
+        position: fixed;
+        bottom: 20px;
+    }
+    .navBox {
+        flex-flow: row;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        padding: 10px 11px;
+        background: linear-gradient(90deg, transparent, #0000001a, transparent);
+        border-radius: 99px;
+        corner-shape: squircle;
+        box-shadow: inset 1px 1px 1px #ffffffbf, inset -1px -1px 1px #ffffff73, 0 0 40px #00000017;
+        backdrop-filter: blur(5px);
+        position: fixed;
+    }
+    /* .navBox .shadow{
+        position: absolute;
+        background: #fff;
+        width: 30px;
+        height: 50px;
+        filter: blur(5px);
+        background: conic-gradient(#0000 90deg, rgb(255, 255, 255) , #0000 270deg);
+    } */
+
+    .navBox .txt {
+        font-size: .8em;
+        display: none;
+    }
+
+    .navBox .menuItem {
+        margin: 0px 3px;
+        padding: 0px 8px;
+        flex-flow: column;
+    }
+
+    .navBox .img {
+        margin-right: 0px;
+
+    }
+
+    .menuItem img {
+        width: 30px;
+        height: 30px;
     }
 }
 
@@ -169,6 +255,7 @@
         margin-top: 85px;
     }
 }
+
 @media screen and (max-height: 700px) {
     .socialPan {
         margin-top: 85px;
